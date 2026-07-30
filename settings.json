@@ -1,0 +1,26 @@
+{
+  "cleanupPeriodDays": 1,
+  "env": {
+    "PYTHONUTF8": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Skill(playwright-cli)",
+      "Skill(playwright-cli:*)",
+      "Bash",
+      "Grep",
+      "PowerShell",
+      "Monitor",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "opus",
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "autoMemoryEnabled": false,
+  "autoDreamEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto"
+}
