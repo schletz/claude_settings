@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(playwright-cli)",
+      "Skill(playwright-cli:*)",
+      "Bash",
+      "Grep",
+      "PowerShell",
+      "Monitor",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "opusplan",
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "auto",
+  "skipDangerousModePermissionPrompt": true,
+  "autoMemoryEnabled": false,
+  "autoDreamEnabled": false,
+  "cleanupPeriodDays": 1
+}
