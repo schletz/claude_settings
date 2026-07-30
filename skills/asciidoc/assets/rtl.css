@@ -1,0 +1,37 @@
+/*
+ * Right-to-left overrides for the default asciidoctor HTML stylesheet.
+ * convert_rtl_to_pdf.py injects this file into the generated HTML before printing it.
+ */
+
+/* System fonts with Arabic and Hebrew glyphs; the web fonts of asciidoctor lack them. */
+body, h1, h2, h3, h4, h5, h6, #header > h1:first-child, .admonitionblock td.icon .title,
+.quoteblock blockquote, table, th, td, p, li {
+  font-family: "Segoe UI", "Geeza Pro", "Noto Sans Arabic", "Noto Sans Hebrew", Tahoma, Arial, sans-serif !important;
+}
+pre, code, pre *, code * { font-family: Consolas, Menlo, "DejaVu Sans Mono", "Courier New", monospace !important; }
+
+/*
+ * Emphasis, bold and inline code hold left-to-right content (identifiers, file names, formulas).
+ * Isolating them keeps neutral characters like "()" or ":" on the correct side,
+ * and nowrap prevents a line break inside an identifier.
+ */
+em, strong, :not(pre) > code, span.ltr { direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+/* Role [.rtl] marks emphasis that holds right-to-left text. */
+.rtl { direction: rtl; white-space: normal; }
+pre { direction: ltr; text-align: left; }
+
+ul, ol { margin-left: 0; margin-right: 1.5em; }
+ul li ul, ul li ol, ol li ul, ol li ol { margin-left: 0; margin-right: 1.25em; }
+th.tableblock.halign-left, td.tableblock.halign-left { text-align: start; }
+/* Role [.ltr] on a table whose content is left-to-right, e.g. program output. */
+table.ltr { direction: ltr; }
+.imageblock { direction: ltr; }
+
+.quoteblock { margin: 0 1.5em 1.25em 1em; }
+/* Arabic and Hebrew fonts have no italic style, the browser would slant the glyphs artificially. */
+.quoteblock blockquote, .quoteblock p { font-style: normal; }
+.quoteblock blockquote { border-left: none; border-right: 3px solid #dddddf; padding: .5em 1.25em .25em 0; }
+.quoteblock blockquote::before { display: none; }
+.admonitionblock td.content { border-left: none; border-right: 1px solid #dddddf; padding-left: 1.25em; padding-right: 1.125em; }
+
+h2, h3, h4 { page-break-after: avoid; }
