@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(playwright-cli)",
+      "Skill(playwright-cli:*)",
+      "Bash",
+      "Grep",
+      "PowerShell",
+      "Monitor",
+      "WebFetch",
+      "WebSearch",
+      "Read",
+      "Write",
+      "Edit"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "opus[1m]",
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "auto",
+  "remoteControlAtStartup": true,
+  "skipDangerousModePermissionPrompt": true
+}
