@@ -1,0 +1,3 @@
+# Python bytecode caches created when the skill scripts are executed
+__pycache__/
+*.py[cod]

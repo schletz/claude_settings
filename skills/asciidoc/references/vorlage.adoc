@@ -1,0 +1,108 @@
+= Testdokument für den Skill asciidoc
+:source-highlighter: rouge
+:icons: font
+:lang: DE
+:hyphens:
+:figure-caption!:
+ifndef::root_dir[:root_dir: .]
+ifndef::github_url[:github_url: ..]
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
+[.lead]
+Ein einleitender Absatz
+
+== Überschrift 1
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+At vero eos et accusam et justo duo dolores et ea rebum.
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+=== Codebeispiel
+
+.Klasse Greeter
+[source,typescript]
+----
+class Greeter {              // <1>
+  greeting: string;          // <2>
+
+  constructor(message: string) { // <3>
+    this.greeting = message;     // <4>
+  }
+
+  // Other code
+
+  greet(): string {                   // <5>
+    return `Hello, ${this.greeting}`; // <6>
+  }
+}
+
+const greeter = new Greeter("World"); // <7>
+console.log(greeter.greet());         // <8>
+----
+
+<1> Die Klasse `Greeter` wird definiert.
+<2> Ein Klassenattribut `greeting` wird deklariert.
+<3> Der Konstruktor initialisiert die Klasse mit einer Nachricht.
+<4> Der Wert wird dem Attribut `greeting` zugewiesen.
+<5> Die Methode `greet` wird definiert.
+<6> Die Methode gibt eine personalisierte Begrüßung zurück.
+<7> Eine Instanz der Klasse `Greeter` wird erstellt.
+<8> Die Methode `greet` wird aufgerufen und das Ergebnis ausgegeben.
+
+
+== Zitate
+
+Dies ist ein vergleichendes Zitat. ^<<nextjs-testing>>^
+
+Das ist ein wörtliches Zitat aus einer Quelle:
+
+[quote]
+____
+There are no general-purpose standards that define how to model the HATEOAS principle.
+The examples in this section illustrate one possible, proprietary solution.
+^<<microsoft-api-design>>^
+____
+
+== PlantUML
+
+PlantUML unterstützt Klassendiagramme, Sequenzdiagramme, Aktivitätsdiagramme und viele weitere Diagrammtypen. Die Diagramme werden direkt aus dem AsciiDoc-Text generiert.
+
+[plantuml,format=svg]
+----
+@startuml
+class Test {
+
+}
+@enduml
+----
+
+== Latex support
+
+=== Gleichungen in latexmath Blöcken
+
+[latexmath]
+++++
+k_{n+1} = n^2 + k_n^2 - k_{n-1}
+++++
+
+Inline Latex ist ebenfalls möglich, mit
+latexmath:[\frac{v^2}{2} + gz + \frac{p}{\rho} = \text{constant}]
+wird die Bernoulligleichung dargestellt.
+
+<<<
+[bibliography]
+=== Literaturverzeichnis
+
+* [[[nextjs-testing,1]]] Vercel. "Building Your Application: Testing". URL: https://nextjs.org/docs/app/building-your-application/testing (abgerufen am 8.5.2024).
+* [[[microsoft-api-design,2]]] Microsoft. "API design: best practices". URL: https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design (abgerufen am 8.5.2026)
